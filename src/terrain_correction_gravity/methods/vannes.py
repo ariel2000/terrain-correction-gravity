@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from ..constants import DEFAULT_DENSITY, DEG_TO_RAD, EARTH_RADIUS, G, SI_TO_MGAL
+from ..constants import DEFAULT_DENSITY, DEG_TO_RAD, EARTH_RADIUS, SI_TO_MGAL, G
 from ..io.terrain import TerrainCells
 
 
@@ -102,4 +102,3 @@ def vannes_direct_effect(
         dtype=np.float64,
     )
     return float(G * integral * SI_TO_MGAL)
-

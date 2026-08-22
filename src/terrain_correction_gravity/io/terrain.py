@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import math
 from collections import OrderedDict
+from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterator
 
 import numpy as np
 from PIL import Image
@@ -141,10 +141,10 @@ class TiledTerrain:
                 raster = self._array(path, factor)
                 n = raster.shape[0]
                 step_deg = 1.0 / n
-                col0 = max(0, int(math.floor((lon_min - lon0) / step_deg)))
-                col1 = min(n, int(math.ceil((lon_max - lon0) / step_deg)))
-                row0 = max(0, int(math.floor((lat0 + 1.0 - lat_max) / step_deg)))
-                row1 = min(n, int(math.ceil((lat0 + 1.0 - lat_min) / step_deg)))
+                col0 = max(0, math.floor((lon_min - lon0) / step_deg))
+                col1 = min(n, math.ceil((lon_max - lon0) / step_deg))
+                row0 = max(0, math.floor((lat0 + 1.0 - lat_max) / step_deg))
+                row1 = min(n, math.ceil((lat0 + 1.0 - lat_min) / step_deg))
                 if row0 >= row1 or col0 >= col1:
                     continue
 

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from ..constants import DEFAULT_DENSITY, G, SI_TO_MGAL
+from ..constants import DEFAULT_DENSITY, SI_TO_MGAL, G
 from ..io.terrain import TerrainCells
 
 

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from ..constants import DEFAULT_DENSITY, G, SI_TO_MGAL
+from ..constants import DEFAULT_DENSITY, SI_TO_MGAL, G
 from ..io.terrain import TerrainCells
 
 
@@ -24,4 +24,3 @@ def point_mass_correction(
         radius_squared[valid] ** 1.5
     )
     return float(np.sum(gz_up, dtype=np.float64) * SI_TO_MGAL)
-

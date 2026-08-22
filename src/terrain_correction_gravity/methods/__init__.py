@@ -7,8 +7,7 @@ from .vannes import vannes_direct_effect
 
 __all__ = [
     "hammer_sector_correction",
-    "point_mass_correction",
     "nagy_prism_correction",
+    "point_mass_correction",
     "vannes_direct_effect",
 ]
-

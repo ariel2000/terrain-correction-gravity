@@ -2,7 +2,6 @@ from pathlib import Path
 
 from terrain_correction_gravity.io.stations import audit_stations, load_stations
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -19,4 +18,3 @@ def test_original_station_inventory():
         "south": 3.5006,
         "north": 6.5,
     }
-

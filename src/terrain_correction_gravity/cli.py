@@ -5,8 +5,9 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import tomllib
 from pathlib import Path
+
+import tomllib
 
 from .io.stations import audit_stations, load_stations
 from .io.terrain import TiledTerrain

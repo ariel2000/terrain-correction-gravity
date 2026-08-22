@@ -8,7 +8,6 @@ from pathlib import Path
 import numpy as np
 from openpyxl import load_workbook
 
-
 EXPECTED_HEADERS = ("Longitude", "Latitude", "Altitude", "A(air libre)")
 
 
@@ -97,4 +96,3 @@ def audit_stations(stations: Stations) -> dict[str, object]:
             "maximum": float(stations.altitude_m.max()),
         },
     }
-
