@@ -44,6 +44,60 @@ validation croisée par blocs de 25 km sont détaillés dans
 [`docs/hybrid_dem_method.md`](docs/hybrid_dem_method.md). Le biais passe de
 +1,673 m à -0,052 m et le RMSE spatial de 26,018 m à 25,360 m.
 
+## Schéma du traitement et de la comparaison
+
+```mermaid
+flowchart TD
+    A["1 991 stations originales"] --> C["Contrôle qualité altimétrique"]
+    B["FABDEM 30 m + contrôle Copernicus"] --> C
+    C --> D["MNT hybride FABDEM–stations"]
+    D --> E["Cellules multirésolutionnelles jusqu'à 200 km"]
+    E --> F["Hammer"]
+    E --> G["Nagy-prismes"]
+    E --> H["Masse ponctuelle"]
+    E --> I["Vannes direct signé"]
+    F --> J["Comparaison spatiale, statistique et radiale"]
+    G --> J
+    H --> J
+    I --> J
+```
+
+## Cartes et graphiques principaux
+
+### Zone d'étude, relief hybride et stations
+
+![Zone d'étude et MNT hybride](outputs/reference/figures/study_area_hybrid_dem.jpg)
+
+La carte de gauche situe l'emprise dans le Cameroun. La carte détaillée montre
+le relief du MNT hybride à 30 m et la distribution des 1 991 stations.
+
+### Ancien MNT Surfer, MNT hybride et différence spatiale
+
+![Comparaison spatiale des MNT](outputs/reference/figures/dem_spatial_comparison.jpg)
+
+Le panneau des différences met directement en évidence les crêtes, vallées et
+volcans lissés par l'ancienne interpolation Surfer.
+
+### Validation indépendante du MNT hybride
+
+![Validation du MNT hybride](outputs/reference/figures/hybrid_dem_validation.jpg)
+
+### Comparaison des méthodes à 200 km
+
+![Comparaison des méthodes](outputs/reference/figures/method_pairwise_comparison_200km.jpg)
+
+### Convergence avec le rayon d'intégration
+
+![Convergence radiale](outputs/reference/figures/radial_convergence_detailed.jpg)
+
+### Localisation des contrôles altimétriques exclus
+
+![Carte du contrôle qualité](outputs/reference/figures/station_altitude_qc_map.jpg)
+
+L'[atlas commenté](docs/visual_results.md) explique ce que chaque figure permet
+de conclure. Toutes ces images sont régénérées par
+`scripts/make_visual_atlas.py`.
+
 ## Résultats à 200 km
 
 | Méthode | Moyenne | Médiane | P95 | Maximum |
@@ -83,4 +137,3 @@ conditionnement du MNT restent calculées, mais sont signalées dans les résult
 Les plus fortes corrections appartiennent à ce groupe. Leur altitude et leur
 référentiel vertical doivent être vérifiés indépendamment avant toute
 interprétation géologique.
-

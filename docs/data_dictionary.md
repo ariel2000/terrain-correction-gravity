@@ -29,6 +29,10 @@ Excel row numbers are retained in calculated outputs as `excel_row`.
 | File | SHA-256 |
 |---|---|
 | original_stations.xlsx | `167c8d10864b3099adc95fb340f1322fa164034c4b308c9d0318be28eb6a19e6` |
+
+`data/reference/cameroon_boundary.geojson` fournit uniquement le contour de
+localisation utilisé dans les cartes. Il provient du jeu Natural Earth relayé
+par le dépôt public `johan/world.geo.json` (identifiant CMR) ; il n'intervient
+dans aucun calcul gravimétrique.
 | out1_surfer.dat | `273622677bc05343f87e38c0141bded3e36c9b87c2b773aec9af63b3ed4e2e2d` |
 | Vannes appendix PDF | `a45e1f4cb3e405d01128d3e2e3d45e3a927161db0916356459b7a7b0ffb3ef4c` |
-
