@@ -1,0 +1,43 @@
+[physics]
+density_kg_m3 = 2670.0
+gravitational_constant_m3_kg_s2 = 6.67430e-11
+earth_radius_m = 6371000.0
+
+[domain]
+radii_km = [20.0, 50.0, 100.0, 200.0]
+
+# Native near field, then progressively aggregated cells. The intervals are
+# half-open except the last upper boundary.
+[[resolution_tiers]]
+inner_km = 0.0
+outer_km = 0.5
+arc_seconds = 1
+
+[[resolution_tiers]]
+inner_km = 0.5
+outer_km = 2.0
+arc_seconds = 3
+
+[[resolution_tiers]]
+inner_km = 2.0
+outer_km = 20.0
+arc_seconds = 15
+
+[[resolution_tiers]]
+inner_km = 20.0
+outer_km = 200.0
+arc_seconds = 60
+
+[hammer]
+sectors = 12
+rings_per_decade = 8
+minimum_radius_m = 15.0
+
+[paths]
+stations = "data/raw/original_stations.xlsx"
+fabdem_dir = "data/external/fabdem_v1_2"
+copernicus_dir = "data/external/copernicus_glo30"
+hybrid_dir = "data/processed/hybrid_dem/tiles"
+excluded_controls = "data/processed/hybrid_dem/excluded_controls.json"
+out1 = "data/reference/out1_surfer.dat"
+output_dir = "outputs/runtime"

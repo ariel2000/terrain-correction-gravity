@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# Large DEM products are reproducible and are not stored in Git.
+data/external/**/*.tif
+data/external/**/*.tiff
+data/processed/**/*.tif
+data/processed/**/*.tiff
+data/cache/
+
+# Generated full-resolution results; compact reference results may be committed explicitly.
+outputs/runtime/
+

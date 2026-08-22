@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the repository and the scientific sources listed in docs/references.md."
+title: "terrain-correction-gravity"
+type: software
+version: 0.1.0
+date-released: 2026-08-22
+authors:
+  - family-names: Katchadjou
+    given-names: Jean Rolin
+  - family-names: Bounou Guimking
+    given-names: Ariel
+repository-code: "https://github.com/ariel2000/terrain-correction-gravity"
+license: MIT
+

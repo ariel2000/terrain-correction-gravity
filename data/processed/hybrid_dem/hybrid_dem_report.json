@@ -1,0 +1,608 @@
+{
+  "title": "MNT hybride FABDEM–stations pour les corrections gravimétriques au Cameroun",
+  "station_count": 1991,
+  "unique_coordinate_count": 1979,
+  "accepted_control_count": 1955,
+  "excluded_control_count": 24,
+  "input_extent_wgs84": {
+    "west": 8.502,
+    "east": 10.9933,
+    "south": 3.5006,
+    "north": 6.5
+  },
+  "model": {
+    "base_dem": "FABDEM v1.2",
+    "output_resolution": "1 arc-second (~30 m)",
+    "horizontal_crs": "WGS 84 / EPSG:4326",
+    "correction_grid_resolution": "15 arc-seconds (~500 m), bicubic upsampling",
+    "interpolator": "robust local inverse-distance weighting",
+    "neighbors": 32,
+    "power": 1.5,
+    "softening_km": 5.0,
+    "residual_clip_m": 40.0,
+    "outside_convex_hull_taper_km": 20.0,
+    "outlier_threshold_m": 150.0
+  },
+  "spatial_cross_validation": {
+    "block_size_km": 25.0,
+    "folds": 5,
+    "spatial_blocks": 119,
+    "fabdem_baseline": {
+      "n": 1955,
+      "bias_m": 1.6732951160575604,
+      "mae_m": 15.667890309655666,
+      "rmse_m": 26.017960897650607,
+      "median_error_m": 0.5171850585938955,
+      "p95_absolute_error_m": 58.508287984620324,
+      "maximum_absolute_error_m": 140.4847964477504
+    },
+    "hybrid_cross_validated": {
+      "n": 1955,
+      "bias_m": -0.052014862733323425,
+      "mae_m": 15.440869935306301,
+      "rmse_m": 25.36016208683894,
+      "median_error_m": -0.27463899047044604,
+      "p95_absolute_error_m": 57.29363654514127,
+      "maximum_absolute_error_m": 144.61384311162618
+    }
+  },
+  "diagnostic_at_positive_altitude_stations": {
+    "out1_surfer": {
+      "n": 1844,
+      "bias_m": -0.06948297942230447,
+      "mae_m": 6.234111174048925,
+      "rmse_m": 10.634371100108975,
+      "median_error_m": 0.13393716074434892,
+      "p95_absolute_error_m": 19.91051491155614,
+      "maximum_absolute_error_m": 118.96222901366144
+    },
+    "fabdem": {
+      "n": 1844,
+      "bias_m": 3.618380214938738,
+      "mae_m": 19.81528180089704,
+      "rmse_m": 44.466120085307246,
+      "median_error_m": 1.5045478987695997,
+      "p95_absolute_error_m": 68.62247312684671,
+      "maximum_absolute_error_m": 942.3680128906385
+    },
+    "copernicus": {
+      "n": 1844,
+      "bias_m": 7.786809101747178,
+      "mae_m": 21.67544084535195,
+      "rmse_m": 46.01533627751148,
+      "median_error_m": 4.489033946989466,
+      "p95_absolute_error_m": 70.92823501587705,
+      "maximum_absolute_error_m": 958.4625631836145
+    },
+    "hybrid_model_space_all": {
+      "n": 1844,
+      "bias_m": 2.0561322195007885,
+      "mae_m": 17.203101388955908,
+      "rmse_m": 41.72330331602042,
+      "median_error_m": -0.22258141420731015,
+      "p95_absolute_error_m": 59.35224893650178,
+      "maximum_absolute_error_m": 930.6590187417373
+    },
+    "hybrid_model_space_accepted_controls": {
+      "n": 1819,
+      "bias_m": 0.31095490807355547,
+      "mae_m": 14.331233899587112,
+      "rmse_m": 23.394100962846807,
+      "median_error_m": -0.279432128522501,
+      "p95_absolute_error_m": 50.62129358527928,
+      "maximum_absolute_error_m": 144.16264795750038
+    }
+  },
+  "tiles": [
+    {
+      "tile": "N03E008",
+      "source": "N03E008_FABDEM_V1-2.tif",
+      "output": "N03E008_HYBRID_FABDEM_STATIONS_30m.tif",
+      "minimum_m": 0.0,
+      "maximum_m": 2996.7939453125,
+      "correction_minimum_m": -21.2466983795166,
+      "correction_maximum_m": 9.169412612915039,
+      "changed_land_pixels": 2045027
+    },
+    {
+      "tile": "N03E009",
+      "source": "N03E009_FABDEM_V1-2.tif",
+      "output": "N03E009_HYBRID_FABDEM_STATIONS_30m.tif",
+      "minimum_m": 0.0,
+      "maximum_m": 391.47833251953125,
+      "correction_minimum_m": -13.478483200073242,
+      "correction_maximum_m": 9.949579238891602,
+      "changed_land_pixels": 3279993
+    },
+    {
+      "tile": "N03E010",
+      "source": "N03E010_FABDEM_V1-2.tif",
+      "output": "N03E010_HYBRID_FABDEM_STATIONS_30m.tif",
+      "minimum_m": 0.0,
+      "maximum_m": 1097.1739501953125,
+      "correction_minimum_m": -22.189788818359375,
+      "correction_maximum_m": 17.085346221923828,
+      "changed_land_pixels": 12950543
+    },
+    {
+      "tile": "N04E008",
+      "source": "N04E008_FABDEM_V1-2.tif",
+      "output": "N04E008_HYBRID_FABDEM_STATIONS_30m.tif",
+      "minimum_m": -1.7000000476837158,
+      "maximum_m": 541.3102416992188,
+      "correction_minimum_m": -17.595417022705078,
+      "correction_maximum_m": 4.1077494621276855,
+      "changed_land_pixels": 5500650
+    },
+    {
+      "tile": "N04E009",
+      "source": "N04E009_FABDEM_V1-2.tif",
+      "output": "N04E009_HYBRID_FABDEM_STATIONS_30m.tif",
+      "minimum_m": 0.0,
+      "maximum_m": 4052.1982421875,
+      "correction_minimum_m": -13.030935287475586,
+      "correction_maximum_m": 30.82480239868164,
+      "changed_land_pixels": 12750979
+    },
+    {
+      "tile": "N04E010",
+      "source": "N04E010_FABDEM_V1-2.tif",
+      "output": "N04E010_HYBRID_FABDEM_STATIONS_30m.tif",
+      "minimum_m": 0.0,
+      "maximum_m": 1424.553955078125,
+      "correction_minimum_m": -21.025468826293945,
+      "correction_maximum_m": 18.752164840698242,
+      "changed_land_pixels": 12959997
+    },
+    {
+      "tile": "N05E008",
+      "source": "N05E008_FABDEM_V1-2.tif",
+      "output": "N05E008_HYBRID_FABDEM_STATIONS_30m.tif",
+      "minimum_m": 0.0,
+      "maximum_m": 1114.3626708984375,
+      "correction_minimum_m": -23.634016036987305,
+      "correction_maximum_m": 8.277873992919922,
+      "changed_land_pixels": 12959382
+    },
+    {
+      "tile": "N05E009",
+      "source": "N05E009_FABDEM_V1-2.tif",
+      "output": "N05E009_HYBRID_FABDEM_STATIONS_30m.tif",
+      "minimum_m": 9.652322769165039,
+      "maximum_m": 2402.32861328125,
+      "correction_minimum_m": -30.827192306518555,
+      "correction_maximum_m": 17.97205924987793,
+      "changed_land_pixels": 12959988
+    },
+    {
+      "tile": "N05E010",
+      "source": "N05E010_FABDEM_V1-2.tif",
+      "output": "N05E010_HYBRID_FABDEM_STATIONS_30m.tif",
+      "minimum_m": 342.8708190917969,
+      "maximum_m": 2753.4501953125,
+      "correction_minimum_m": -13.72308349609375,
+      "correction_maximum_m": 15.699169158935547,
+      "changed_land_pixels": 12959989
+    },
+    {
+      "tile": "N06E008",
+      "source": "N06E008_FABDEM_V1-2.tif",
+      "output": "N06E008_HYBRID_FABDEM_STATIONS_30m.tif",
+      "minimum_m": 11.99320125579834,
+      "maximum_m": 1349.64501953125,
+      "correction_minimum_m": -18.25495719909668,
+      "correction_maximum_m": 14.972712516784668,
+      "changed_land_pixels": 12905535
+    },
+    {
+      "tile": "N06E009",
+      "source": "N06E009_FABDEM_V1-2.tif",
+      "output": "N06E009_HYBRID_FABDEM_STATIONS_30m.tif",
+      "minimum_m": 51.21454620361328,
+      "maximum_m": 2039.2298583984375,
+      "correction_minimum_m": -27.737293243408203,
+      "correction_maximum_m": 0.3676820397377014,
+      "changed_land_pixels": 12959999
+    },
+    {
+      "tile": "N06E010",
+      "source": "N06E010_FABDEM_V1-2.tif",
+      "output": "N06E010_HYBRID_FABDEM_STATIONS_30m.tif",
+      "minimum_m": 175.3712615966797,
+      "maximum_m": 3007.115478515625,
+      "correction_minimum_m": -12.936075210571289,
+      "correction_maximum_m": 11.122011184692383,
+      "changed_land_pixels": 12959910
+    }
+  ],
+  "excluded_controls": [
+    {
+      "longitude": 9.4933,
+      "latitude": 5.5233,
+      "station_altitude_m": 178.0,
+      "fabdem_altitude_m": 331.0727854614127,
+      "copernicus_altitude_m": 347.79712712400817,
+      "station_minus_fabdem_m": -153.0727854614127,
+      "source_rows": [
+        459
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.5117,
+      "latitude": 5.5483,
+      "station_altitude_m": 183.0,
+      "fabdem_altitude_m": 473.75757370606885,
+      "copernicus_altitude_m": 488.23439752199124,
+      "station_minus_fabdem_m": -290.75757370606885,
+      "source_rows": [
+        461
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.5183,
+      "latitude": 5.5617,
+      "station_altitude_m": 160.0,
+      "fabdem_altitude_m": 489.99961348877025,
+      "copernicus_altitude_m": 507.83633656005713,
+      "station_minus_fabdem_m": -329.99961348877025,
+      "source_rows": [
+        463
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.5133,
+      "latitude": 5.5883,
+      "station_altitude_m": 143.0,
+      "fabdem_altitude_m": 1085.3680128906385,
+      "copernicus_altitude_m": 1101.4625631836145,
+      "station_minus_fabdem_m": -942.3680128906385,
+      "source_rows": [
+        466
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.495,
+      "latitude": 5.6083,
+      "station_altitude_m": 179.0,
+      "fabdem_altitude_m": 418.22860473633364,
+      "copernicus_altitude_m": 435.3311911010777,
+      "station_minus_fabdem_m": -239.22860473633364,
+      "source_rows": [
+        469
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 10.1417,
+      "latitude": 5.8617,
+      "station_altitude_m": 1626.0,
+      "fabdem_altitude_m": 1864.0955671386696,
+      "copernicus_altitude_m": 1864.1913643066384,
+      "station_minus_fabdem_m": -238.0955671386696,
+      "source_rows": [
+        548
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 10.0217,
+      "latitude": 6.275,
+      "station_altitude_m": 568.0,
+      "fabdem_altitude_m": 783.0551855469394,
+      "copernicus_altitude_m": 783.2679901123697,
+      "station_minus_fabdem_m": -215.05518554693936,
+      "source_rows": [
+        610
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.8052,
+      "latitude": 3.776,
+      "station_altitude_m": 160.9,
+      "fabdem_altitude_m": 5.95677998542871,
+      "copernicus_altitude_m": 21.04348119354535,
+      "station_minus_fabdem_m": 154.9432200145713,
+      "source_rows": [
+        707
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.2183,
+      "latitude": 4.0352,
+      "station_altitude_m": 80.8,
+      "fabdem_altitude_m": 309.76364420168034,
+      "copernicus_altitude_m": 313.70970471193795,
+      "station_minus_fabdem_m": -228.96364420168032,
+      "source_rows": [
+        756
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.3126,
+      "latitude": 4.0892,
+      "station_altitude_m": 0.0,
+      "fabdem_altitude_m": 219.76957432250862,
+      "copernicus_altitude_m": 221.82794942626884,
+      "station_minus_fabdem_m": -219.76957432250862,
+      "source_rows": [
+        790
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "zero_altitude_incompatible_with_dem",
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 10.3862,
+      "latitude": 4.4738,
+      "station_altitude_m": 521.7,
+      "fabdem_altitude_m": 716.7007903075997,
+      "copernicus_altitude_m": 737.8277331786942,
+      "station_minus_fabdem_m": -195.0007903075997,
+      "source_rows": [
+        1000
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.0811,
+      "latitude": 4.4932,
+      "station_altitude_m": 12.05,
+      "fabdem_altitude_m": 27.965124401854965,
+      "copernicus_altitude_m": 27.683233454128462,
+      "station_minus_fabdem_m": -15.915124401854964,
+      "source_rows": [
+        1007,
+        1008
+      ],
+      "duplicate_height_spread_m": 10.100000000000001,
+      "accepted": false,
+      "exclusion_reasons": [
+        "duplicate_coordinate_height_spread_over_5m"
+      ]
+    },
+    {
+      "longitude": 10.2568,
+      "latitude": 4.7011,
+      "station_altitude_m": 515.2,
+      "fabdem_altitude_m": 349.26718999022444,
+      "copernicus_altitude_m": 356.85554464109975,
+      "station_minus_fabdem_m": 165.9328100097756,
+      "source_rows": [
+        1144
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.6619,
+      "latitude": 4.7942,
+      "station_altitude_m": 671.8,
+      "fabdem_altitude_m": 689.922868041989,
+      "copernicus_altitude_m": 699.5842619140517,
+      "station_minus_fabdem_m": -18.122868041989022,
+      "source_rows": [
+        1188,
+        1189
+      ],
+      "duplicate_height_spread_m": 10.800000000000068,
+      "accepted": false,
+      "exclusion_reasons": [
+        "duplicate_coordinate_height_spread_over_5m"
+      ]
+    },
+    {
+      "longitude": 9.789,
+      "latitude": 4.9501,
+      "station_altitude_m": 1221.3,
+      "fabdem_altitude_m": 1065.929631347656,
+      "copernicus_altitude_m": 1072.6599624023386,
+      "station_minus_fabdem_m": 155.37036865234404,
+      "source_rows": [
+        1230
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.9009,
+      "latitude": 5.4688,
+      "station_altitude_m": 1063.7,
+      "fabdem_altitude_m": 1307.5434284179685,
+      "copernicus_altitude_m": 1316.2471318359374,
+      "station_minus_fabdem_m": -243.84342841796843,
+      "source_rows": [
+        1405
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.8964,
+      "latitude": 5.4968,
+      "station_altitude_m": 1307.0,
+      "fabdem_altitude_m": 1003.2283020996083,
+      "copernicus_altitude_m": 1004.6420504638623,
+      "station_minus_fabdem_m": 303.7716979003917,
+      "source_rows": [
+        1425
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.9623,
+      "latitude": 5.503,
+      "station_altitude_m": 1516.7,
+      "fabdem_altitude_m": 1715.3011171874896,
+      "copernicus_altitude_m": 1717.028453124988,
+      "station_minus_fabdem_m": -198.60111718748954,
+      "source_rows": [
+        1429
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 8.8194,
+      "latitude": 5.675,
+      "station_altitude_m": 369.0,
+      "fabdem_altitude_m": 111.63830024719024,
+      "copernicus_altitude_m": 127.16667053222265,
+      "station_minus_fabdem_m": 257.3616997528097,
+      "source_rows": [
+        1554
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.3712,
+      "latitude": 5.7946,
+      "station_altitude_m": 98.9,
+      "fabdem_altitude_m": 266.20196217041035,
+      "copernicus_altitude_m": 272.86868328857463,
+      "station_minus_fabdem_m": -167.30196217041035,
+      "source_rows": [
+        1660
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.9606,
+      "latitude": 5.8088,
+      "station_altitude_m": 1571.4,
+      "fabdem_altitude_m": 1406.5511072265776,
+      "copernicus_altitude_m": 1406.6820231933743,
+      "station_minus_fabdem_m": 164.84889277342245,
+      "source_rows": [
+        1673
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.0769,
+      "latitude": 6.255,
+      "station_altitude_m": 135.9,
+      "fabdem_altitude_m": 830.1661883544854,
+      "copernicus_altitude_m": 833.9252624511653,
+      "station_minus_fabdem_m": -694.2661883544854,
+      "source_rows": [
+        1906
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.0869,
+      "latitude": 6.3,
+      "station_altitude_m": 123.6,
+      "fabdem_altitude_m": 310.32160736084745,
+      "copernicus_altitude_m": 321.0995373535227,
+      "station_minus_fabdem_m": -186.72160736084746,
+      "source_rows": [
+        1928
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    },
+    {
+      "longitude": 9.0919,
+      "latitude": 6.3319,
+      "station_altitude_m": 132.4,
+      "fabdem_altitude_m": 375.6860297852278,
+      "copernicus_altitude_m": 388.4727376099394,
+      "station_minus_fabdem_m": -243.28602978522778,
+      "source_rows": [
+        1944
+      ],
+      "duplicate_height_spread_m": 0.0,
+      "accepted": false,
+      "exclusion_reasons": [
+        "station_fabdem_residual_over_150m"
+      ]
+    }
+  ],
+  "scientific_warning": "Training-point diagnostics are not independent validation. The spatial block cross-validation is the principal model-selection result. Original station elevations remain the observation heights."
+}

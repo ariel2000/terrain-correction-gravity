@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "terrain-correction-gravity"
+version = "0.1.0"
+description = "Reproducible terrain corrections for Cameroon gravity stations using a station-conditioned hybrid DEM"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Katchadjou Jean Rolin"},
+  {name = "Bounou Guimking Ariel"},
+]
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "openpyxl>=3.1",
+  "Pillow>=10.0",
+  "matplotlib>=3.8",
+  "pandas>=2.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.6"]
+
+[project.scripts]
+terrain-correction = "terrain_correction_gravity.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

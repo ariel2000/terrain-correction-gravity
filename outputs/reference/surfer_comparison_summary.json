@@ -1,0 +1,22 @@
+{
+  "definition": "error = bilinear out1.dat altitude - original station altitude",
+  "all_stations": {
+    "n": 1991,
+    "bias_m": -0.003064106646010506,
+    "mae_m": 5.836306935276276,
+    "rmse_m": 10.512751024113497,
+    "median_absolute_error_m": 3.0321944747158796,
+    "p95_absolute_error_m": 19.675702480957952,
+    "maximum_absolute_error_m": 118.96222901366144
+  },
+  "positive_altitude_stations": {
+    "n": 1844,
+    "bias_m": -0.06948297942230447,
+    "mae_m": 6.234111174048925,
+    "rmse_m": 10.634371100108975,
+    "median_absolute_error_m": 3.4950541319464774,
+    "p95_absolute_error_m": 19.91051491155614,
+    "maximum_absolute_error_m": 118.96222901366144
+  },
+  "warning": "out1.dat was interpolated from the same station heights; these are fidelity, not independent terrain-accuracy, metrics."
+}
