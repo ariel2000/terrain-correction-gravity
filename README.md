@@ -180,10 +180,9 @@ software license.
 
 ## Authors and supervision
 
-- Katchadjou Jean Rolin
-- Bounou Guimking Ariel
-- Supervisor: Kamgia Joseph, Maitre de recherche, Institut National de la
-  Cartographie, Cameroon
+- Bounou Guimking Ariel, Master degree of geophysics,Novosibirsk State Technical University, Russia
+- Katchadjou Jean Rolin,Master degree of geophysics,University of Yaoundé 1
+- Supervisor: Pr. Kamgia Joseph, National Institut of cartography, Cameroon 
 
 ## Scientific caution
 
