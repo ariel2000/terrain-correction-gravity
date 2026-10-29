@@ -65,6 +65,7 @@ def command_run(args: argparse.Namespace) -> None:
         "nagy_prism_mgal",
         "point_mass_mgal",
         "vannes_direct_mgal",
+        "vannes_adapted_mgal",
     ]
     with output_path.open("w", newline="", encoding="utf-8") as stream:
         writer = csv.DictWriter(stream, fieldnames=fieldnames)

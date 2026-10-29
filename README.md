@@ -22,10 +22,26 @@ radial domain and multiresolution cells. Four estimates are produced:
 | `hammer_mgal` | Hammer-style annular-sector approximation of the same classical correction |
 | `point_mass_mgal` | cell-centroid approximation used as a convergence diagnostic |
 | `vannes_direct_mgal` | signed spherical residual direct effect transcribed from Vannes (2011) |
+| `vannes_adapted_mgal` | station-centred condensed-mass Vannes correction (SCCV) |
 
 The Vannes value is not silently treated as identical to the conventional
 positive terrain correction. Its definition and sign are preserved in the
 outputs so the comparison remains physically interpretable.
+
+The original and adapted Vannes paths remain separate. SCCV condenses the
+residual mass on the sphere passing through the observation station and uses
+exact Nagy prisms inside 5 km. The controlled 1,991-station SCCV benchmark on
+the information-equivalent historical 200 x 200 grid is generated with:
+
+```powershell
+python scripts/compare_vannes_adaptation.py
+```
+
+Its local station table and aggregate validation statistics are written to
+`outputs/vannes_adapted_reference_grid/`. The station table is excluded from
+the public repository pending written data-publication authorisation. These
+values must not be combined unlabelled with the hybrid-FABDEM 200 km results
+because the terrain model and integration domain differ.
 
 ## Input inventory
 

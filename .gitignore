@@ -19,3 +19,7 @@ data/cache/
 # Generated full-resolution results; compact reference results may be committed explicitly.
 outputs/runtime/
 
+# Station-level derived results remain private until written data-publication
+# authorisation has been signed. The aggregate validation summary may be public.
+outputs/vannes_adapted_reference_grid/station_comparison.csv
+

@@ -10,7 +10,7 @@ from .io.terrain import TerrainCells, TiledTerrain
 from .methods.hammer import hammer_sector_correction, logarithmic_edges
 from .methods.point_mass import point_mass_correction
 from .methods.prism import nagy_prism_correction
-from .methods.vannes import vannes_direct_effect
+from .methods.vannes import vannes_adapted_correction, vannes_direct_effect
 
 
 @dataclass(frozen=True)
@@ -89,6 +89,13 @@ def calculate_station(
             station_height_m,
             density_kg_m3,
         ),
+        "vannes_adapted_mgal": vannes_adapted_correction(
+            cells,
+            longitude_deg,
+            latitude_deg,
+            station_height_m,
+            density_kg_m3,
+        ),
     }
 
 
@@ -127,6 +134,13 @@ def calculate_station_radii(
                     cells, station_height_m, density_kg_m3
                 ),
                 "vannes_direct_mgal": vannes_direct_effect(
+                    cells,
+                    longitude_deg,
+                    latitude_deg,
+                    station_height_m,
+                    density_kg_m3,
+                ),
+                "vannes_adapted_mgal": vannes_adapted_correction(
                     cells,
                     longitude_deg,
                     latitude_deg,
