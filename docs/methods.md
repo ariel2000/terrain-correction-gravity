@@ -50,6 +50,36 @@ condensed-mass term in Vannes' formulation. It is not relabelled as the always
 positive classical terrain correction. Comparisons must therefore report both
 value and definition.
 
+## Station-centred condensed-mass Vannes correction (SCCV)
+
+SCCV is a derived terrain-correction method inspired by the point-by-point
+Vannes formulation.  It does not alter or relabel the historical `DNEWTC`
+output.  For a station radius `a = R + h_a` and terrain radius
+`b_i = R + h_i`, the residual mass between `a` and `b_i` is represented with
+the signed density contrast `sign(b_i-a) rho`.  Its radial attraction is
+integrated by Gauss-Legendre quadrature.  The same mass is then condensed on
+the sphere `r = a`, rather than on the geoid:
+
+```text
+Delta V_i / Delta Omega = sign(b_i-a) (r_max^3-r_min^3) / 3
+
+K_SCCV,i = integral[r^2 (r cos(psi_i)-a) / d(r)^3 dr]
+           - Delta V_i/Delta Omega * a(cos(psi_i)-1) / d(a)^3
+
+TC_SCCV = 10^5 G rho sum_i K_SCCV,i Delta Omega_i
+```
+
+The containing cell and all terrain within 5 km are evaluated with exact Nagy
+prisms.  This removes the point-cell singularity and stabilises steep local
+relief.  Outside 5 km, the baseline radial quadrature order is eight.  The
+shared near-field prism calculation means agreement with Nagy is a numerical
+coherence test, not a fully independent validation.
+
+The controlled 1,991-station benchmark uses the information-equivalent
+200 x 200 representation of the historical Surfer grid.  Those results are
+stored separately from the regional hybrid-FABDEM calculation so that values
+obtained with different terrain representations are not mixed.
+
 ## Multiresolution cells
 
 Aggregation uses arithmetic mean elevation over complete source-pixel blocks.
